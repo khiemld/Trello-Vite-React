@@ -22,7 +22,7 @@ export default function ModeSelect() {
     // setAge(event.target.value);
   }
   return (
-    <FormControl size="small">
+    <FormControl size="small" sx={{ minWidth: '120px' }}>
       <InputLabel id="label-select-dark-light-mode">Mode</InputLabel>
       <Select
         labelId="label-select-dark-light-mode"
