@@ -1,5 +1,4 @@
 import { experimental_extendTheme as extendTheme} from '@mui/material/styles'
-import { deepOrange, red, teal } from '@mui/material/colors'
 
 // Create a theme instance.
 const theme = extendTheme({
@@ -8,19 +7,19 @@ const theme = extendTheme({
     boardBarHeight: '58px'
   },
   colorSchemes: {
-    light: {
-      palette: {
-        primary: teal,
-        secondary: deepOrange
-      }
-    },
-    dark: {
-      palette: {
-        // primary: {
-        //   // main: '#000'
-        // }
-      }
-    }
+    // light: {
+    //   palette: {
+    //     primary: teal,
+    //     secondary: deepOrange
+    //   }
+    // },
+    // dark: {
+    //   palette: {
+    //     // primary: {
+    //     //   // main: '#000'
+    //     // }
+    //   }
+    // }
   },
   components: {
     MuiCssBaseline: {
@@ -31,11 +30,11 @@ const theme = extendTheme({
             height: '8px'
           },
           '*::-webkit-scrollbar-thumb': {
-            backgroundColor: '#bdc3c7',
+            backgroundColor: '#dcdde1',
             borderRadius: '8px'
           },
           '*::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#00b894'
+            backgroundColor: 'white'
           }
         }
       }
@@ -46,7 +45,8 @@ const theme = extendTheme({
         // Name of the slot
         root: {
           // Some CSS
-          textTransform: 'none'
+          textTransform: 'none',
+          borderWidth: '0.5px'
         }
       }
     },
@@ -54,7 +54,7 @@ const theme = extendTheme({
       styleOverrides: {
         // Name of the slot
         root: ({ theme }) => ({ 
-          color: theme.palette.primary.main,
+          // color: theme.palette.primary.main,
           fontSize: '0.875rem'
         })
       }
@@ -62,22 +62,11 @@ const theme = extendTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         // Name of the slot
-        root: ({ theme }) => {
-          return {
-            color: theme.palette.primary.main,
-            fontSize: '0.875rem',
-            '.MuiOutlinedInput-notchedOutline': {
-              borderColor: theme.palette.primary.light
-            },
-            '&:hover':{
-              '.MuiOutlinedInput-notchedOutline': {
-                borderColor: theme.palette.primary.main
-              }
-            },
-            '& fieldset':{ 
-              borderWidth: '1px !important' //Don't emphasize border when type on input
-            }
-          }
+        root: {
+          fontSize: '0.875rem',
+          '& fieldset':{ borderWidth: '0.5px !important' }, //Don't emphasize border when type on input
+          '&:hover fieldset':{ borderWidth: '2px !important' }, //Don't emphasize border when type on input
+          '&:Mui-focused fieldset':{ borderWidth: '2px !important' } //Don't emphasize border when type on input
         }
       }
     }
