@@ -1,4 +1,4 @@
-import ModeSelect from '../ModeSelect'
+import ModeSelect from '../ModeSelect/ModeSelect'
 import Box from '@mui/material/Box'
 import SvgIcon from '@mui/material/SvgIcon'
 import Typography from '@mui/material/Typography'
