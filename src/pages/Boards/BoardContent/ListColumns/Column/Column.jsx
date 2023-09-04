@@ -18,14 +18,16 @@ import DragHandleIcon from '@mui/icons-material/DragHandle'
 import Box from '@mui/material/Box'
 import { useState } from 'react'
 import ListCard from './ListCards/ListCard'
+import {mapOrder} from '~/utils/sort'
 
 
-
-function Column() {
+function Column({ column }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => { setAnchorEl(event.currentTarget) }
   const handleClose = () => { setAnchorEl(null) }
+
+  const orderedCards = mapOrder(column?.cards, column.cardOrderIds, '_id')
   return (
     <Box
       sx={{
@@ -52,7 +54,7 @@ function Column() {
           fontSize: '1rem'
         }}
         >
-          Column Title
+          {column?.title}
         </Typography>
         <Box>
           <div>
@@ -106,7 +108,7 @@ function Column() {
       </Box>
 
       {/**Box Column List Card */}
-      <ListCard />
+      <ListCard cards={orderedCards}/>
 
       {/**Box Column Footer */}
       <Box sx={{
